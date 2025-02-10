@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:mytravel/constants/colors.dart';
 import 'package:mytravel/models/data.dart';
 import 'package:mytravel/widgets/destination.dart';
+import 'package:mytravel/widgets/icon_tab.dart';
+import 'package:mytravel/widgets/profile.dart';
+import 'package:mytravel/widgets/searchbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,6 +19,33 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.all(15),
           child: Column(
             children: [
+              //row 1 - profile image and name
+              const ProfileWidget(),
+              //row 2
+              const SizedBox(
+                height: 15,
+              ),
+              Text(
+                'Point of Interest',
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                      color: secondaryColors,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              //row 3 = textfromfield
+              const SizedBox(
+                height: 15,
+              ),
+              const SearchingBar(),
+              //row 4
+              const SizedBox(
+                height: 20,
+              ),
+              const IconTab(),
+              //row5 = top destinations
+              const SizedBox(
+                height: 15,
+              ),
               const Row(
                 children: [
                   Text(
@@ -31,7 +60,9 @@ class HomeScreen extends StatelessWidget {
                   Icon(Icons.tune, size: 25, color: secondaryColors),
                 ],
               ),
-              const SizedBox(height: 20,), //Row5
+              const SizedBox(
+                height: 20,
+              ), //Row5
               GridView.count(
                 crossAxisCount: 2,
                 scrollDirection: Axis.vertical,
@@ -41,21 +72,19 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 24,
                 children: List.generate(destinations.length, (index) {
                   var e = destinations[index];
-        
+
                   return AnimationConfiguration.staggeredGrid(
                       position: index,
                       columnCount: 2,
                       child: SlideAnimation(
                         child: FadeInAnimation(
-                          child: DestinationWidget(
-                            name: e.name,
-                            image: e.image,
-                            rate: e.rate,
-                            location: e.location,
-                          )
-                        ),
-                      )
-                    );
+                            child: DestinationWidget(
+                          name: e.name,
+                          image: e.image,
+                          rate: e.rate,
+                          location: e.location,
+                        )),
+                      ));
                 }),
               ), //Row6
             ],
