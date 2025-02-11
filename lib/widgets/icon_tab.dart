@@ -12,19 +12,11 @@ class IconTab extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconWidget(
-          title: 'MT',
-          color: greenbaseColors,
-          icon: Icons.map,
-        ),
-        IconWidget(title: 'River', color: bluebaseColors, icon: Icons.water),
-        IconWidget(title: 'Lava', color: redbaseColors, icon: Icons.volcano),
-        IconWidget(
-          title: 'Beach',
-          color: yellowbaseColors,
-          icon: Icons.beach_access,
-        ),
-        IconWidget(title: 'Sunset', color: orangebaseColors, icon: Icons.sunny),
+        IconWidget(title: "MT", color: greenbaseColors, icon: Icons.map,),
+        IconWidget(title: "River", color: bluebaseColors, icon: Icons.water,),
+        IconWidget(title: "Lava", color: redbaseColors, icon: Icons.volcano,),
+        IconWidget(title: "Beach", color: yellowbaseColors, icon: Icons.beach_access_rounded,),
+        IconWidget(title: "Sunset", color: orangebaseColors, icon: Icons.sunny,),
       ],
     );
   }

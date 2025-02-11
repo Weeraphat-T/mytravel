@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mytravel/constants/colors.dart';
 import 'package:mytravel/models/data.dart';
 import 'package:mytravel/widgets/destination.dart';
 import 'package:mytravel/widgets/icon_tab.dart';
 import 'package:mytravel/widgets/profile.dart';
-import 'package:mytravel/widgets/searchbar.dart';
+import 'package:mytravel/widgets/searching_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,33 +19,32 @@ class HomeScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //row 1 - profile image and name
+              //row 1 = Profile image and name
               const ProfileWidget(),
               //row 2
               const SizedBox(
-                height: 15,
+                height: 10,
               ),
               Text(
-                'Point of Interest',
+                "Point of Interest",
                 style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                      color: secondaryColors,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    color: secondaryColors, fontWeight: FontWeight.bold),
               ),
-              //row 3 = textfromfield
+              //row 3 = Text from field
               const SizedBox(
-                height: 15,
+                height: 20,
               ),
               const SearchingBar(),
               //row 4
               const SizedBox(
                 height: 20,
               ),
-              const IconTab(),
-              //row5 = top destinations
+              IconTab(),
+              //row 5 = Top Destination
               const SizedBox(
-                height: 15,
+                height: 20,
               ),
               const Row(
                 children: [
@@ -60,9 +60,10 @@ class HomeScreen extends StatelessWidget {
                   Icon(Icons.tune, size: 25, color: secondaryColors),
                 ],
               ),
+              //row 6 = Images of Destination
               const SizedBox(
                 height: 20,
-              ), //Row5
+              ),
               GridView.count(
                 crossAxisCount: 2,
                 scrollDirection: Axis.vertical,
@@ -94,3 +95,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+

@@ -11,15 +11,11 @@ class ProfileWidget extends StatelessWidget {
     return const Row(
       children: [
         CircleAvatar(
-          backgroundImage: AssetImage('assets/images/Profile.jpg'),
-          radius: 25,
+        backgroundImage: AssetImage('assets/images/Profile.jpg'),
+        radius: 25,
         ),
         Spacer(),
-        Icon(
-          Icons.menu,
-          size: 25,
-          color: secondaryColors,
-        ),
+        Icon(Icons.menu, size:25.0, color: secondaryColors,),
       ],
     );
   }
