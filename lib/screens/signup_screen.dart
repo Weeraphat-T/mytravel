@@ -94,7 +94,14 @@ class SignUpPage extends StatelessWidget {
                 height: 30,
               ),
               MyButton(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => SigninPage(),
+                    ),
+                  );
+                },
                 labelText: 'Sign up',
               ),
               //8
